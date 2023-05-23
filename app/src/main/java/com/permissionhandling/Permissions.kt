@@ -28,11 +28,11 @@ fun Permissions() {
         mutableStateListOf<NeededPermission>()
     }
 
-    val bluetoothPermissionLauncher = rememberLauncherForActivityResult(
+    val microphonePermissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission(),
         onResult = { isGranted ->
             if (!isGranted)
-                permissionDialog.add(NeededPermission.BLUETOOTH)
+                permissionDialog.add(NeededPermission.RECORD_AUDIO)
         }
     )
 
@@ -58,10 +58,10 @@ fun Permissions() {
     ) {
         Button(
             onClick = {
-                bluetoothPermissionLauncher.launch(NeededPermission.BLUETOOTH.permission)
+                microphonePermissionLauncher.launch(NeededPermission.RECORD_AUDIO.permission)
             }
         ) {
-            Text(text = "Request bluetooth Permission")
+            Text(text = "Request microphone Permission")
         }
 
         Button(

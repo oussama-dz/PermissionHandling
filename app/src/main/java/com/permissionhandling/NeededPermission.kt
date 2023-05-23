@@ -27,11 +27,11 @@ enum class NeededPermission(
         permanentlyDeniedDescription = "This permission is needed to read your contacts. Please grant the permission in app settings.",
     ),
 
-    BLUETOOTH(
-        permission = android.Manifest.permission.BLUETOOTH,
-        title = "Bluetooth Permission",
-        description = "This permission is needed to access your bluetooth. Please grant the permission.",
-        permanentlyDeniedDescription = "This permission is needed to access your bluetooth. Please grant the permission in app settings.",
+    RECORD_AUDIO(
+        permission = android.Manifest.permission.RECORD_AUDIO,
+        title = "Record Audio permission",
+        description = "This permission is needed to access your microphone. Please grant the permission.",
+        permanentlyDeniedDescription = "This permission is needed to access your microphone. Please grant the permission in app settings.",
     );
 
     fun permissionTextProvider(isPermanentDenied: Boolean): String {
